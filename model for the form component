@@ -1,0 +1,12 @@
+// lib/models/form_component.dart
+class FormComponent {
+  String label;
+  String infoText;
+  String settings;
+
+  FormComponent({
+    required this.label,
+    required this.infoText,
+    required this.settings,
+  });
+}
