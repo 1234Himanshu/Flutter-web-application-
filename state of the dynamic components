@@ -1,0 +1,28 @@
+// lib/providers/form_provider.dart
+import 'package:flutter/foundation.dart';
+import 'package:dynamic_form/models/form_component.dart';
+
+class FormProvider with ChangeNotifier {
+  List<FormComponent> _components = [
+    FormComponent(label: '', infoText: '', settings: '')
+  ];
+
+  List<FormComponent> get components => _components;
+
+  void addComponent() {
+    _components.add(FormComponent(label: '', infoText: '', settings: ''));
+    notifyListeners();
+  }
+
+  void removeComponent(int index) {
+    if (_components.length > 1) {
+      _components.removeAt(index);
+      notifyListeners();
+    }
+  }
+
+  void updateComponent(int index, FormComponent component) {
+    _components[index] = component;
+    notifyListeners();
+  }
+}
